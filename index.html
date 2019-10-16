@@ -1,5 +1,82 @@
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPG Game JQuery</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Added link to the .js file -->
+    <script src="assets/javascript/game.js"></script>
 
 
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    <!-- Added a link to our external stylesheet-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">RPG Game</a>
+    </nav>
+
+   <div class="container">
+       <div class="row">
+            <div class="col">
+                <img id = "select1" src="assets/images/cleric.png" alt="mage">
+               
+            </div>
+            <div class="col">
+                <img id = "select2" src="assets/images/warrior.png" alt="mage">       
+            </div>
+            <div class="col">
+                 <img id = "select3" src="assets/images/necromancer.png" alt="mage">
+                    
+            </div>
+            <div class="col">
+                <img id = "select4" src="assets/images/mage.png" alt="mage">
+                        
+            </div>
+       </div>
+       <div class="row"><br><br></div>
+        <div class="row">
+            <div class="col">
+            <button type="button" class="btn btn-danger">Attack</button>
+            </div>
+            <div class="col">
+            <h2>Defender Area</h2>
+            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <img id = "fight1" src="assets/images/cleric.png" alt="mage" style="display:none;">
+               
+            </div>
+            <div class="col">
+                <img id = "fight2" src="assets/images/warrior.png" alt="mage" style="display:none;">       
+            </div>
+            <div class="col">
+                 <img id = "fight3" src="assets/images/necromancer.png" alt="mage" style="display:none;">
+                    
+            </div>
+            <div class="col">
+                <img id = "fight4" src="assets/images/mage.png" alt="mage" style="display:none;">
+                        
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
