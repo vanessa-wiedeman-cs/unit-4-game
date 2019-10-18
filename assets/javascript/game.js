@@ -9,6 +9,8 @@ var fight = 0;
 
 //fighter object set to zero will be set to 4 choices later
 var fighter = new Object();
+//enemy object set to zero will be remaining 3 choices later
+var enemy = new Object();
 
 
 //4 RPG character choices for fight game
@@ -32,17 +34,26 @@ mage.healthPoints = 140;
 mage.attackPower = 10;
 mage.counterAttackPower = 10;
 
+
+/*4 document ready functions for clicking each photo.
+If else used to pick fighter or fighting. 
+Use a function call for setFighter() to set fighter
+and a this.fight variable to set which obj we are fighting.
+*/
+
 $(document).ready(function(){
     $("#select1").on("click", function(){
         $("#select1").hide();
         if(selectFighter == 0) {
-         $("#pick1").show();
-         selectFighter = 1;
-         setFighter(1);
+            $("#pick1").show();
+            selectFighter = 1;
+            setFighter(1);
+            document.getElementById("prompt").innerHTML = ("Pick who to Duel!");
         }
         else{
             $("#fight1").show();
             this.fight = 1;
+            document.getElementById("prompt").innerHTML = ("Fight!");
         }
     });
   });
@@ -50,14 +61,16 @@ $(document).ready(function(){
   $(document).ready(function(){
     $("#select2").on("click", function(){
         $("#select2").hide();
-        if(selectFighter == 0) {
-         $("#pick2").show();
-         selectFighter = 1;
-         setFighter(2);
+            if(selectFighter == 0) {
+            $("#pick2").show();
+            selectFighter = 1;
+            setFighter(2);
+            document.getElementById("prompt").innerHTML = ("Pick who to Duel!");
         }
         else{
             $("#fight2").show();
             this.fight = 2;
+            document.getElementById("prompt").innerHTML = ("Fight!");
         }
     });
   });
@@ -65,14 +78,17 @@ $(document).ready(function(){
   $(document).ready(function(){
     $("#select3").on("click", function(){
         $("#select3").hide();
+        
         if(selectFighter == 0) {
-         $("#pick3").show();
-         selectFighter = 1;
-         setFighter(3);
+            $("#pick3").show();
+            selectFighter = 1;
+            setFighter(3);
+            document.getElementById("prompt").innerHTML = ("Pick who to Duel!");
         }
         else{
             $("#fight3").show();
             this.fight = 3;
+            document.getElementById("prompt").innerHTML = ("Fight!");
         }
     });
   });
@@ -81,16 +97,23 @@ $(document).ready(function(){
     $("#select4").on("click", function(){
         $("#select4").hide();
         if(selectFighter == 0) {
-         $("#pick4").show();
-         selectFighter = 1;
-         setFighter(4);
+            $("#pick4").show();
+            selectFighter = 1;
+            setFighter(4);
+            document.getElementById("prompt").innerHTML = ("Pick who to Duel!");
         }
         else{
             $("#fight4").show();
             this.fight = 4;
+            document.getElementById("prompt").innerHTML = ("Fight!");
         }
     });
   });
+
+$("#attack").click(function(){
+    fight();
+});
+
 
 /*
   setFighter takes in number 1-4 and selects which fighter you are playing as.
@@ -116,4 +139,46 @@ function setFighter(x){
             break;
     }
 }
+/*
+  setEnemy takes in number 1-4 and selects which fighter you are battling.
+  Uses a switch for the number pick.
+
+  Doesn't return anything but sets enemy Obj to one of our character Objs. 
+*/
+function setEnemy(x){
+    var pick = x;
+    switch(pick){
+        case 1:
+            this.enemy = Object.assign({}, this.cleric);
+        break;
+
+        case 2:
+            this.enemy = Object.assign({}, this.warrior);
+            break;
+        case 3:
+            this.enemy = Object.assign({}, this.necromancer);
+            break;
+        case 4:
+            this.enemy = Object.assign({}, this.mage);
+            break;
+    }
+}
+
+/*In the fight function the fighter and enemy will battle in a series of rounds.
+For every attack done a different algorithm will be applied to the fighters base attack (this.attackPower).
+There is no healing. Every enemy will always use the same counter attack stat (this.counterAttackPower). 
+*/
+function fight(){
+    
+}
+
+
+
+
+
+
+
+
+
+
 
