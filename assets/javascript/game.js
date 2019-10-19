@@ -16,22 +16,22 @@ var enemy = new Object();
 //4 RPG character choices for fight game
 var cleric = new Object();
 cleric.healthPoints = 100;
-cleric.attackPower = 10;
+cleric.attackPower = 25;
 cleric.counterAttackPower = 10;
 
 var warrior = new Object();
 warrior.healthPoints = 120;
-warrior.attackPower = 10;
+warrior.attackPower = 25;
 warrior.counterAttackPower = 10;
 
 var necromancer = new Object();
 necromancer.healthPoints = 130;
-necromancer.attackPower = 10;
+necromancer.attackPower = 25;
 necromancer.counterAttackPower = 10;
 
 var mage = new Object();
 mage.healthPoints = 140;
-mage.attackPower = 10;
+mage.attackPower = 25;
 mage.counterAttackPower = 10;
 
 
@@ -110,9 +110,6 @@ $(document).ready(function(){
     });
   });
 
-$("#attack").click(function(){
-    fight();
-});
 
 
 /*
@@ -168,9 +165,9 @@ function setEnemy(x){
 For every attack done a different algorithm will be applied to the fighters base attack (this.attackPower).
 There is no healing. Every enemy will always use the same counter attack stat (this.counterAttackPower). 
 */
-function fight(){
-    
-}
+$("attack").on("click", function(){
+    alert("The button was clicked.");
+  });
 
 
 
