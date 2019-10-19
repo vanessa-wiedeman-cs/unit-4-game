@@ -1,81 +1,134 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG Game JQuery</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RPG Game JQuery</title>
 
-    <!-- Added link to the jQuery Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Added link to the jQuery Library -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Added link to the .js file -->
-    <script src="assets/javascript/game.js"></script>
+        <!-- Added link to the .js file -->
+        <script src="assets/javascript/game.js"></script>
 
+        <!-- Added a link to Bootstrap-->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        />
 
-    <!-- Added a link to Bootstrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <!-- Added a link to our external stylesheet-->
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
 
-    <!-- Added a link to our external stylesheet-->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">RPG Game</a>
+        </nav>
 
-</head>
-
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">RPG Game</a>
-    </nav>
-
-   <div class="container">
-       <div class="row">
-            <h1 class="mx-auto" id = "prompt">Pick a Fighter!</h1>
-       </div>
-
-       <div class="row">
-            <div class="col">
-                <img id = "select1" src="assets/images/cleric.png" alt="mage">
-               
+        <div class="container">
+            <div class="row">
+                <h1 class="mx-auto" id="prompt">Pick a Fighter!</h1>
             </div>
-            <div class="col">
-                <img id = "select2" src="assets/images/warrior.png" alt="mage">       
+
+            <div class="row">
+                <h1 class="mx-auto" id="round">Round 1!</h1>
             </div>
-            <div class="col">
-                 <img id = "select3" src="assets/images/necromancer.png" alt="mage">
-                    
+
+            <div class="row">
+                <div class="col">
+                    <img
+                        id="select1"
+                        src="assets/images/cleric.png"
+                        alt="mage"
+                    />
+                </div>
+                <div class="col">
+                    <img
+                        id="select2"
+                        src="assets/images/warrior.png"
+                        alt="mage"
+                    />
+                </div>
+                <div class="col">
+                    <img
+                        id="select3"
+                        src="assets/images/necromancer.png"
+                        alt="mage"
+                    />
+                </div>
+                <div class="col">
+                    <img id="select4" src="assets/images/mage.png" alt="mage" />
+                </div>
             </div>
-            <div class="col">
-                <img id = "select4" src="assets/images/mage.png" alt="mage">
-                        
+            <div class="row"><br /><br /></div>
+            <div class="row">
+                <div class="col">
+                    <button id="attack" type="button" class="btn btn-danger">
+                        Attack
+                    </button>
+                </div>
             </div>
-       </div>
-       <div class="row"><br><br></div>
-        <div class="row">
-            <div class="col">
-            <button id="attack" type="button" class="btn btn-danger">Attack</button>
+            <div class="row">
+                <div class="col">
+                    <h2>Your Character</h2>
+                    <p id="health">Health</p>
+                    <img
+                        id="pick1"
+                        src="assets/images/cleric.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <img
+                        id="pick2"
+                        src="assets/images/warrior.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <img
+                        id="pick3"
+                        src="assets/images/necromancer.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <img
+                        id="pick4"
+                        src="assets/images/mage.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <p id="power">Attack</p>
+                </div>
+                <div class="col">
+                    <h2>Defender Area</h2>
+                    <p id="eHealth">Health</p>
+                    <img
+                        id="fight1"
+                        src="assets/images/cleric.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <img
+                        id="fight2"
+                        src="assets/images/warrior.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <img
+                        id="fight3"
+                        src="assets/images/necromancer.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <img
+                        id="fight4"
+                        src="assets/images/mage.png"
+                        alt="mage"
+                        style="display:none;"
+                    />
+                    <p id="eAttack">Attack</p>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h2>Your Character</h2>
-                <img id = "pick1" src="assets/images/cleric.png" alt="mage" style="display:none;">
-                <img id = "pick2" src="assets/images/warrior.png" alt="mage" style="display:none;">  
-                <img id = "pick3" src="assets/images/necromancer.png" alt="mage" style="display:none;">
-                <img id = "pick4" src="assets/images/mage.png" alt="mage" style="display:none;">
-            </div>
-            <div class="col">
-                <h2>Defender Area</h2>
-                <img id = "fight1" src="assets/images/cleric.png" alt="mage" style="display:none;">
-                <img id = "fight2" src="assets/images/warrior.png" alt="mage" style="display:none;">  
-                <img id = "fight3" src="assets/images/necromancer.png" alt="mage" style="display:none;">
-                <img id = "fight4" src="assets/images/mage.png" alt="mage" style="display:none;">
-            </div>
-        </div>
-     
-
-    </div>
-
-</body>
-
+    </body>
 </html>
