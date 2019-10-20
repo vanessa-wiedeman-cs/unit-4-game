@@ -67,9 +67,9 @@ $(document).ready(function() {
             setFighter(2);
             document.getElementById("prompt").innerHTML = "Pick who to Duel!";
         } else {
-                $("#fight2").show();
-                setEnemy(2);
-                document.getElementById("prompt").innerHTML = "Fight!";
+            $("#fight2").show();
+            setEnemy(2);
+            document.getElementById("prompt").innerHTML = "Fight!";
         }
     });
 });
@@ -179,9 +179,15 @@ function setEnemy(x) {
 /*In the fight function the fighter and enemy will battle in a series of rounds.
 For every attack done a different algorithm will be applied to the fighters base attack (this.attackPower).
 There is no healing. Every enemy will always use the same counter attack stat (this.counterAttackPower). 
+Displays fight log as updated upon clicking
+Also displays round # and if game is won or lost.
 */
 function attack() {
-    if (this.enemy.fight != 0 && roundNum != 4 && this.fighter.healthPoints !=0) {
+    if (
+        this.enemy.fight != 0 &&
+        roundNum != 4 &&
+        this.fighter.healthPoints != 0
+    ) {
         this.fighter.healthPoints =
             this.fighter.healthPoints - this.enemy.counterAttackPower;
         document.getElementById("health").innerHTML =
@@ -198,18 +204,16 @@ function attack() {
 
         switch (this.selectFighter) {
             case 1:
-                if(roundNum < 1)
-                {
-                this.fighter.attackPower += this.enemy.counterAttackPower;
-                this.fighter.attackPower += this.enemy.counterAttackPower;
-                }
-                else{
+                if (roundNum < 1) {
+                    this.fighter.attackPower += this.enemy.counterAttackPower;
+                    this.fighter.attackPower += this.enemy.counterAttackPower;
+                } else {
                     this.fighter.attackPower += this.enemy.counterAttackPower;
                     this.fighter.attackPower += this.enemy.counterAttackPower;
                     this.fighter.attackPower += this.enemy.counterAttackPower;
                     this.fighter.attackPower += this.enemy.counterAttackPower;
                 }
-                
+
                 break;
 
             case 2:
@@ -219,7 +223,7 @@ function attack() {
                 if (this.fighter.healthPoints > 75) {
                     this.fighter.attackPower += this.fighter.attackPower;
                 } else {
-                    this.fighter.attackPower += (this.fighter.attackPower * 3 );
+                    this.fighter.attackPower += this.fighter.attackPower * 3;
                 }
                 break;
             case 4:
