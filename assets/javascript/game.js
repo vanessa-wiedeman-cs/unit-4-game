@@ -13,27 +13,27 @@ var enemy = new Object();
 
 //4 RPG character choices for fight game
 var cleric = new Object();
-cleric.healthPoints = 100;
-cleric.attackPower = 25;
+cleric.healthPoints = 120;
+cleric.attackPower = 20;
 cleric.counterAttackPower = 10;
 cleric.fight = 1;
 
 var warrior = new Object();
-warrior.healthPoints = 300;
-warrior.attackPower = 15;
-warrior.counterAttackPower = 20;
+warrior.healthPoints = 350;
+warrior.attackPower = 5;
+warrior.counterAttackPower = 50;
 warrior.fight = 2;
 
 var necromancer = new Object();
-necromancer.healthPoints = 150;
+necromancer.healthPoints = 130;
 necromancer.attackPower = 25;
-necromancer.counterAttackPower = 10;
+necromancer.counterAttackPower = 5;
 necromancer.fight = 3;
 
 var mage = new Object();
-mage.healthPoints = 140;
+mage.healthPoints = 120;
 mage.attackPower = 30;
-mage.counterAttackPower = 10;
+mage.counterAttackPower = 30;
 mage.fight = 4;
 
 /*4 document ready functions for clicking each photo.
@@ -67,9 +67,9 @@ $(document).ready(function() {
             setFighter(2);
             document.getElementById("prompt").innerHTML = "Pick who to Duel!";
         } else {
-            $("#fight2").show();
-            setEnemy(2);
-            document.getElementById("prompt").innerHTML = "Fight!";
+                $("#fight2").show();
+                setEnemy(2);
+                document.getElementById("prompt").innerHTML = "Fight!";
         }
     });
 });
@@ -173,7 +173,7 @@ function setEnemy(x) {
     document.getElementById("eHealth").innerHTML =
         "Health: " + this.enemy.healthPoints;
     document.getElementById("eAttack").innerHTML =
-        "Attack: " + this.enemy.attackPower;
+        "Attack: " + this.enemy.counterAttackPower;
 }
 
 /*In the fight function the fighter and enemy will battle in a series of rounds.
@@ -194,28 +194,43 @@ function attack() {
         document.getElementById("eHealth").innerHTML =
             "Health: " + this.enemy.healthPoints;
         document.getElementById("eAttack").innerHTML =
-            "Attack: " + this.enemy.attackPower;
+            "Attack: " + this.enemy.counterAttackPower;
 
         switch (this.selectFighter) {
             case 1:
+                if(roundNum < 1)
+                {
                 this.fighter.attackPower += this.enemy.counterAttackPower;
-                this.fighter.attackPower += this.enemy.counterAttackPower
+                this.fighter.attackPower += this.enemy.counterAttackPower;
+                }
+                else{
+                    this.fighter.attackPower += this.enemy.counterAttackPower;
+                    this.fighter.attackPower += this.enemy.counterAttackPower;
+                    this.fighter.attackPower += this.enemy.counterAttackPower;
+                    this.fighter.attackPower += this.enemy.counterAttackPower;
+                }
+                
                 break;
 
             case 2:
-                this.fighter.attackPower += this.fighter.counterAttackPower;
+                this.fighter.attackPower += this.fighter.attackPower;
                 break;
             case 3:
                 if (this.fighter.healthPoints > 75) {
-                    this.fighter.attackPower += this.fighter.counterAttackPower;
+                    this.fighter.attackPower += this.fighter.attackPower;
                 } else {
-                    this.fighter.attackPower += (this.fighter.counterAttackPower * 3 );
+                    this.fighter.attackPower += (this.fighter.attackPower * 3 );
                 }
                 break;
             case 4:
-                this.fighter.attackPower += Math.floor(Math.random() * 20) + 10;
+                this.fighter.attackPower += Math.floor(Math.random() * 20) + 30;
                 break;
         }
+
+        document.getElementById("health").innerHTML =
+            "Health: " + this.fighter.healthPoints;
+        document.getElementById("power").innerHTML =
+            "Attack: " + this.fighter.attackPower;
 
         if (this.enemy.healthPoints <= 0) {
             switch (this.enemy.fight) {
@@ -243,6 +258,7 @@ function attack() {
 
         if (this.fighter.healthPoints <= 0) {
             document.getElementById("prompt").innerHTML = "You died in battle!";
+            document.getElementById("round").innerHTML = "Try again!";
         }
     }
 
