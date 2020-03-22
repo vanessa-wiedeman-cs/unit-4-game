@@ -10,7 +10,7 @@ Project Requirements: Build a RPG fighting game
 
 - Requirements:
 
-  - 4 Character objects all containing Health Points, Attack Power, Counter Attack Power. 
+  - 4 Character objects all containing Health Points, Attack Power, Counter Attack Power.  
 
   - Select character on photo click. 
 
