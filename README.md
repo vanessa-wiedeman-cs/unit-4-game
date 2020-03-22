@@ -16,7 +16,7 @@ Project Requirements: Build a RPG fighting game
 
   - Attack button which calls attack power of character and then runs counter attack power of enemy character. 
 
-  - Defender Area for holding battles. 
+  - Defender Area for holding battles.  
   
   - Each character has their own algorithm as to how they gain power/health after each fight (level up). Enemies do NOT level up and stay static when battling in power/health. 
   
