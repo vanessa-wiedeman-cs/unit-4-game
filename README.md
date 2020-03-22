@@ -20,7 +20,7 @@ Project Requirements: Build a RPG fighting game
   
   - Each character has their own algorithm as to how they gain power/health after each fight (level up). Enemies do NOT level up and stay static when battling in power/health. 
   
-  - Math random is used for one of the algorithms. 
+  - Math random is used for one of the algorithms.   
 
   - Uses Bootstrap, JS, and JQuery
 
