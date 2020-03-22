@@ -22,7 +22,7 @@ Project Requirements: Build a RPG fighting game
   
   - Math random is used for one of the algorithms.   
 
-  - Uses Bootstrap, JS, and JQuery  
+  - Uses Bootstrap, JS, and JQuery   
 
   - Deployed (GitHub Pages)
 
