@@ -2,7 +2,7 @@
 
 Project Requirements: Build a RPG fighting game
 
-- Project Goal:
+- Project Goal:  
 
   - Build a website that has 4 characters to choose from in a last man standing wins battle!
   
